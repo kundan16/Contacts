@@ -54,12 +54,14 @@ export default {
 
                     headers: {'Content-Type' : 'application/json'}
                 })
-                .then(function() {router.replace({path: '/'}) } )
+                .then(router.replace({path: "/home"}))
                 .catch(function (error) {
                  alert(error);
               
                 });
 
+                //router.replace({path: "/home"});
+              
                
 }
 

@@ -7,9 +7,11 @@
     <h3>NAME:  {{ contact.name }} </h3>
     <div>NUMBER:    {{ contact.number }} </div>
     <div>EMAIL:    {{ contact.email }} </div>
+    <router-link :to="{ name: 'contactupdate', params: { id: contact._id } }"><v-btn>Update Contact</v-btn></router-link>
 <v-btn @click="deletet">
     Delete Contact
 </v-btn>
+
   </div>
     </v-container>
 </template>
@@ -22,7 +24,7 @@ import axios from 'axios'
 export default {
     data () {
         return {
-            contact: []
+            contact: {}
         }
     },
 
@@ -49,7 +51,7 @@ var id = this.$route.params.id;
         .catch(error => {
             console.log(error)
         });
-        router.go(-1);
+        router.replace({path: "/home"});
         
 
     }

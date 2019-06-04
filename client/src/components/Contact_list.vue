@@ -14,6 +14,7 @@
 
 <script>
 import axios from 'axios';
+import router from '../router'
 // import detail from './Contact_detail';
   export default {
 
@@ -28,6 +29,8 @@ import axios from 'axios';
       axios
         .get('http://localhost:8080/contacts')
         .then(response => (this.contacts = response.data))
+
+        router.replace({ path:"/home"});
     },
 
     
